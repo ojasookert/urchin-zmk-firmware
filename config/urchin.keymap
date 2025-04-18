@@ -42,6 +42,16 @@
          };
      };
 
+	combos {
+		compatible = "zmk,combos";
+		// both right thumb keys
+		combo_accent {
+			timeout-ms = <200>;
+			key-positions = <32 33>;
+			bindings = <&mo 1>;
+		};
+	};
+
 	keymap {
 		compatible = "zmk,keymap";
 		qwerty {
@@ -58,7 +68,7 @@
 			label = "Nav";
 			bindings = <
                  &none       &none         &none         &none          &none         &kp PG_UP    &kp HOME    &kp UP      &kp END     &kp PRINTSCREEN
-                 &none       &kp LEFT_ALT   &kp LCTRL     &kp LEFT_SHIFT  &none        &kp PG_DN    &kp LEFT    &kp DOWN   &kp RIGHT   &none
+                 &none       &kp LEFT_ALT   &kp LCTRL     &kp LEFT_SHIFT  &none        &kp PG_DN    &kp LEFT    &kp DOWN   &kp RIGHT   &kp TAB
                  &none       &kp LC(X)      &kp LC(C)     &kp LC(V)       &none        &none       &none       &none      &none     &none
                               &none         &kp LEFT_GUI   &none       &kp DELETE
 			>;
@@ -90,7 +100,7 @@
 			bindings = <
                  &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_CLR_ALL    &trans    &trans    &trans    &trans    &trans
                  &bt BT_CLR      &trans       &trans       &trans       &trans           &trans    &trans    &trans    &trans    &trans
-                 &trans        &trans       &trans       &trans       &trans           &trans    &trans    &trans    &trans    &trans
+                 &studio_unlock        &trans       &trans       &trans       &trans           &trans    &trans    &trans    &trans    &trans
                                &trans       &trans       &trans         &trans
 			>;
 		};
